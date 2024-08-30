@@ -1,0 +1,3 @@
+maior:19
+menor:1
+media dos elementos: 26.3
