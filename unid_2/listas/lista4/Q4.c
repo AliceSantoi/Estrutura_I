@@ -19,7 +19,8 @@ a complexidade de tempo de uma busca binaria em um array ordenado?
 t(n) = c1(n) + c2(1)
 t(n) = c1(n) + b
 t(n)= an + b
-t(n) = O(n2)
+t(n) = O(n)
+o pior caso da busca linear é 0(n), ou seja, o item procurado estaria na ultima posição do array
 
-a busca binária funciona em tempo de O(1), constante
+a busca binária em um array ordenado tem complexidade O(log n), que acaba sendo mais efetiva do que a linear
 */

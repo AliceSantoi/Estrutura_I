@@ -1,10 +1,10 @@
 void selection_sort(int arr[], int n)
 {
-    int i, j, min_idx;//c1 1
-    for (i = 0; i < n - 1; i++)//c2 n
+    int i, j, min_idx;
+    for (i = 0; i < n - 1; i++)
     {
         min_idx = i;
-        for (j = i + 1; j < n; j++)//c3 n * n
+        for (j = i + 1; j < n; j++)
         {
             if (arr[j] < arr[min_idx])
             {
@@ -16,6 +16,9 @@ void selection_sort(int arr[], int n)
         arr[i] = temp;
     }
 }
-Pergunta : Qual  ́e a complexidade de tempo desse algoritmo ? Existem algoritmos de ordena ̧c ̃ao mais
-                                                                 eficientes
-           ? Se sim, cite um exemplo.2
+
+/*Qual ´e a complexidade de tempo desse algoritmo? Existem algoritmos de ordena¸c˜ao mais
+eficientes? Se sim, cite um exemplo
+    No melhor caso, a complexidade do selection_sort é de O(n^2) mas o melhor ainda é o quick sort, com complexidade de tempo O(n log(n))
+
+*/
