@@ -23,5 +23,9 @@ int main(void)
     lista_f = inserir_no_final(lista_f, 5);
     printf("====Exibe no final====\n");
     exibir_lista(lista_f);
-    // exibir
+    
+
+    printf("===Remove o primeiro no da lista===\n");
+    remove_primeiro(&lista);
+    exibir_lista(lista);
 }

@@ -47,14 +47,21 @@ Lista *inserir_no_final(Lista *lista, int num)
     aux->prox = novo;
     return lista;
 }
+//p.s: como a questão não pediu retorno, usei um ponteiro de ponteiro para alterar o valor real dentro da lista
+void remove_primeiro(Lista **lista)
+{
+    //[9] -> [8] -> [7] -> [6] -> [5] -> NULL
 
-void remove_primeiro(Lista* lista){
-    if(lista == NULL){
-        printf("lista vazia!");
+    if ((*lista) == NULL)
+    {
+        printf("Lista vazia");
         return;
     }
 
-    
+    Lista *aux = *lista;
+
+    *lista = (*lista)->prox;
+    free(aux);
 }
 
 void exibir_lista(Lista *lista)
@@ -66,4 +73,3 @@ void exibir_lista(Lista *lista)
         count = count->prox;
     }
 }
-
