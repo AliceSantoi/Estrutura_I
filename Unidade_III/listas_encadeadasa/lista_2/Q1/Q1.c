@@ -1,4 +1,4 @@
-#include "ex_1.h"
+#include "Q1.h"
 
 struct lista
 {
@@ -73,7 +73,8 @@ void remove_primeiro_final(Lista **lista)
         return;
     }
 
-    if((*lista)->prox == NULL){
+    if ((*lista)->prox == NULL)
+    {
         free(*lista);
         *lista = NULL;
     }
@@ -90,6 +91,84 @@ void remove_primeiro_final(Lista **lista)
 
     ant->prox = NULL;
     free(aux);
+}
+
+void buscar(Lista **lista, int valor)
+{
+    Lista *aux = (*lista);
+    Lista *ant = NULL;
+    while (aux && aux->num != valor)
+    {
+        aux = aux->prox;
+    }
+    if (aux)
+    {
+        ant = aux;
+        printf("Valor encontrado.");
+        return;
+    }
+
+    printf("valor nao encontrado.");
+    return;
+}
+
+Lista *remover_valor(Lista *lista, int valor)
+{
+    if (lista == NULL)
+    {
+        return lista;
+    }
+
+    Lista *aux = lista;
+    Lista *ant = NULL;
+
+    // checar se o valor é o primeiro do No
+    if (lista->num == valor)
+    {
+        lista = lista->prox;
+        free(aux);
+        return lista;
+    }
+
+    // se não, procurar o valor na lista
+    while (aux != NULL && aux->num != valor)
+    {
+        ant = aux;
+        aux = aux->prox;
+    }
+
+    if (aux)
+    {
+        ant->prox = aux->prox;
+        free(aux);
+    }
+
+    return lista;
+}
+
+Lista *inserir_apos(Lista *lista, int valor, int novo_valor)
+{
+    if (lista == NULL)
+    {
+        return lista;
+    }
+
+    Lista *aux = lista;
+
+    while (aux != NULL && aux->num != valor)
+    {
+        aux = aux->prox;
+    }
+
+    if (aux != NULL)
+    {
+        Lista *novo_no = (Lista *)malloc(sizeof(Lista));
+        novo_no->num = novo_valor;
+        novo_no->prox = aux->prox;
+        aux->prox = novo_no;
+    }
+
+    return lista;
 }
 
 void exibir_lista(Lista *lista)
