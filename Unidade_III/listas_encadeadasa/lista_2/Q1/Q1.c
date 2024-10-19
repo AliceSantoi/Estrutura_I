@@ -180,3 +180,29 @@ void exibir_lista(Lista *lista)
         count = count->prox;
     }
 }
+
+void menu(){
+
+    char opcao;
+
+    printf("[1] - Inserir no inicio.");
+    printf("[2] - Inserir no final.");
+    printf("[3] - Exibir lista.");
+    printf("[4] - Remover primeiro.");
+    
+
+
+    switch (opcao)
+    {
+    case '1':
+        printf("");
+        break;
+    
+    default:
+        break;
+    }
+
+
+
+
+}
